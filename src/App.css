@@ -12,6 +12,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+h2 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
 header {
   padding: 10px;
   background-color: #1e65ff;
@@ -21,4 +25,14 @@ header h1 {
   margin: 0 auto;
   max-width: 1200px;
   color: #fff;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 100px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
 }
