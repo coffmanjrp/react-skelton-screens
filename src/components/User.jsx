@@ -3,10 +3,13 @@ import SkeletonProfile from '../skeletons/SkeletonProfile';
 
 const User = () => {
   const [profile, setProfile] = useState(null);
+  const randomNum = Math.floor(Math.random() * 10);
 
   useEffect(() => {
     setTimeout(async () => {
-      const res = await fetch('https://jsonplaceholder.typicode.com/users/1');
+      const res = await fetch(
+        `https://jsonplaceholder.typicode.com/users/${randomNum}`
+      );
       const data = await res.json();
 
       setProfile(data);
@@ -23,7 +26,13 @@ const User = () => {
           <div className="profile">
             <h3>{profile.username}</h3>
             <p>{profile.email}</p>
-            <a href={profile.website}>{profile.website}</a>
+            <a
+              href={`https://${profile.website}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {profile.website}
+            </a>
           </div>
         )}
         {!profile && <SkeletonProfile theme="light" />}
